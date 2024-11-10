@@ -1,5 +1,67 @@
+/* Light mode variables */
+:root {
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --link-color: #1a0dab;
+  --button-background: #e0e0e0;
+  --button-text: #000000;
+}
+
+/* Dark mode variables */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #121212; /* Dark gray background */
+    --text-color: #e0e0e0; /* Off-white text */
+    --link-color: #8ab4f8; /* Desaturated blue for links */
+    --button-background: #333333; /* Darker gray for buttons */
+    --button-text: #e0e0e0; /* Off-white text for buttons */
+  }
+}
+
+/* Global styles */
 body {
-  margin: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
   font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  background-color: var(--button-background);
+  color: var(--button-text);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+button:hover {
+  background-color: var(--link-color);
+  color: var(--background-color);
+}
+
+button:active {
+  background-color: #004494;
+  transform: scale(0.98);
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  outline: none;
+  transition: background-color 0.3s, color 0.3s;
 }
